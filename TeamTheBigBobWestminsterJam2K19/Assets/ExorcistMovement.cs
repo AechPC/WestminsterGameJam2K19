@@ -1,0 +1,31 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ExorcistMovement : MonoBehaviour
+{
+    [SerializeField] private float movementSpeed, raycastDis, jumpForce;
+
+    [SerializeField] private LayerMask groundLayers;
+
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * movementSpeed, rb.velocity.y);
+        rb.velocity = movement;
+
+	    //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers);
+     //   Debug.Log(hit.distance);
+
+	    if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && Input.GetKeyDown(KeyCode.Space))
+	    {
+	        rb.AddForce(new Vector2(0, jumpForce));
+	    }
+    }
+}
