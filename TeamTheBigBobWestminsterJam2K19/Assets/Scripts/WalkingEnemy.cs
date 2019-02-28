@@ -25,7 +25,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
         playerTransform = GameObject.FindWithTag("Exorcist").transform;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (stunned)
         {
@@ -36,11 +36,11 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
             Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer) ||  // Look right
             (transform.position - playerTransform.position).sqrMagnitude < listenRangeSqr)      // Listen
         {
-            rb.velocity = new Vector2(transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2((transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed) * Time.deltaTime, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(patrollingLeft ? -movementSpeed : movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2((patrollingLeft ? -movementSpeed : movementSpeed) * Time.deltaTime, rb.velocity.y);
 
             if (patrollingLeft ? transform.position.x < patrolPointLeft.position.x : transform.position.x > patrolPointRight.position.x)
             {

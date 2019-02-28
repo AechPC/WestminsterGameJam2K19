@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   sightRange: 9
-  movementSpeed: 7
+  movementSpeed: 400
   health: 80
   damageDealt: 30
 --- !u!212 &212105185844901882

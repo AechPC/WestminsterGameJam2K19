@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class ExorcistGun : MonoBehaviour
 {
-    [SerializeField] private float shootCooldown, reloadTime, range;
+    public float shootCooldown;
+    [SerializeField] private float range, reloadTime;
     private float lastShoot, reloadDiff;
+
+    public float ReloadTime
+    {
+        get { return reloadTime; }
+        set
+        {
+            reloadTime = value;
+            reloadDiff = reloadTime - shootCooldown;
+        }
+    }
 
     [SerializeField] private int magSize;
     private int bulletsLeft;

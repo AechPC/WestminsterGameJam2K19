@@ -106,7 +106,7 @@ MonoBehaviour:
   damageDealt: 10
   sightRange: 7
   listenRange: 3
-  movementSpeed: 4
+  movementSpeed: 120
   patrolPointLeft: {fileID: 0}
   patrolPointRight: {fileID: 0}
 --- !u!212 &212825870590141678

@@ -489,36 +489,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae5dd5aa5ee4304da55902c44617824, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &454498575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1199491822619366, guid: b9ab6df3dfa535642b10b72281004268,
-    type: 2}
-  m_PrefabInternal: {fileID: 954302555}
---- !u!114 &454498576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 454498575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4973181317c62fc49bb71a02f49b7a7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &454498585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 454498575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383b4a8b177d8454d9874d8b4268b7b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  staminaBar: {fileID: 2089492641}
-  maxStamina: 100
-  staminaRegen: 0.2
 --- !u!1001 &734800847
 Prefab:
   m_ObjectHideFlags: 0
@@ -611,24 +581,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4053409625027340, guid: b9ab6df3dfa535642b10b72281004268, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114561753787399350, guid: b9ab6df3dfa535642b10b72281004268,
-        type: 2}
-      propertyPath: groundLayers.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 114351298705238306, guid: b9ab6df3dfa535642b10b72281004268,
         type: 2}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 855575626}
-    - target: {fileID: 114928855389883528, guid: b9ab6df3dfa535642b10b72281004268,
+    - target: {fileID: 114179423170643736, guid: b9ab6df3dfa535642b10b72281004268,
+        type: 2}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 2089492641}
+    - target: {fileID: 114747275099195416, guid: b9ab6df3dfa535642b10b72281004268,
         type: 2}
       propertyPath: staminaCost
-      value: 60
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114747275099195416, guid: b9ab6df3dfa535642b10b72281004268,
+        type: 2}
+      propertyPath: timeScaleTarget
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114561753787399350, guid: b9ab6df3dfa535642b10b72281004268,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 240
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ab6df3dfa535642b10b72281004268, type: 2}
@@ -837,6 +813,11 @@ Prefab:
     - target: {fileID: 4920617716992950, guid: de9150a2413de5040b0c015104d43b2a, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570721699155116, guid: de9150a2413de5040b0c015104d43b2a,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9150a2413de5040b0c015104d43b2a, type: 2}

@@ -22,7 +22,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (stunned)
         {
@@ -33,13 +33,13 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
 
-            rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
         }
         else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
         }
     }
 
