@@ -15,6 +15,20 @@ public class BulletTime : MonoBehaviour
     [SerializeField] private int minStaminaToActivate;
 
     private bool slowing;
+    private bool Slowing
+    {
+        get { return slowing; }
+        set
+        {
+            if (!slowing && value)
+            {
+                abilityAnim.SetTrigger("BulletTime");
+            }
+            slowing = value;
+        }
+    }
+
+    [SerializeField] private Animator abilityAnim;
 
     private void Start()
     {
@@ -29,16 +43,16 @@ public class BulletTime : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && (stamina.Stamina >= minStaminaToActivate || slowing && stamina.Stamina >= staminaCost))
+        if (Input.GetKey(KeyCode.LeftShift) && (stamina.Stamina >= minStaminaToActivate || Slowing && stamina.Stamina >= staminaCost))
         {
-            slowing = true;
+            Slowing = true;
             stamina.Stamina -= staminaCost;
             Time.timeScale = Mathf.Lerp(Time.timeScale, timeScaleTarget, slowSpeed);
             UpdateExorcistAbilities();
         }
         else
         {
-            slowing = false;
+            Slowing = false;
             Time.timeScale = Mathf.Lerp(Time.timeScale, 1, revertSpeed);
             if (Time.timeScale >= revertTolerance)
             {

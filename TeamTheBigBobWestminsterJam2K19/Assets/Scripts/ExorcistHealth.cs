@@ -30,6 +30,7 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
             return;
         }
 
+        
         anim.SetBool("Damage", true);
 
         if (Time.time > lastDamageTime + invulnerabilityTime)

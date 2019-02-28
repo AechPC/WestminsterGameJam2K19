@@ -10,6 +10,8 @@ public class ExorcistShockwave : MonoBehaviour
 
     [SerializeField] private Vector2 dimensions;
 
+    [SerializeField] private Animator abilityAnim;
+
     private void Awake()
     {
         stamina = GetComponent<ExorcistStamina>();
@@ -19,6 +21,7 @@ public class ExorcistShockwave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H) && stamina.Stamina >= staminaCost)
         {
+            abilityAnim.SetTrigger("Shockwave");
             stamina.Stamina -= staminaCost;
             Vector2 lowerCorner = new Vector2(transform.position.x + (transform.rotation.eulerAngles.y < 90 ? transform.localScale.x: -transform.localScale.x), transform.position.y - transform.localScale.y / 2);
             Collider2D[] hit = Physics2D.OverlapAreaAll(lowerCorner, lowerCorner + new Vector2(transform.rotation.eulerAngles.y < 90 ? dimensions.x : -dimensions.x, dimensions.y));
