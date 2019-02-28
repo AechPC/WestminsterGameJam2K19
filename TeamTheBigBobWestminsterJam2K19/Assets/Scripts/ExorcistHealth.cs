@@ -40,4 +40,12 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
             }
         }
     }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "UnholyWater" && !immune)
+        {
+            Debug.Log("Exorcist diedead. Game over should ensue here");
+        }
+    }
 }
