@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: b8c9c4d06bd6755479920013b65a6ece
+guid: 3d4889dcb96dec74fb66a2cf2536febe
 TextureImporter:
   fileIDToRecycleName:
-    21300000: excor_ability_time_0
-    21300002: excor_ability_time_1
-    21300004: excor_ability_time_2
-    21300006: excor_ability_time_3
-    21300008: excor_ability_time_4
-    21300010: excor_ability_time_5
-    21300012: excor_ability_time_6
+    21300000: ExplosionParticles_0
+    21300002: ExplosionParticles_1
+    21300004: ExplosionParticles_2
+    21300006: ExplosionParticles_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -38,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -70,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: excor_ability_time_0
+      name: ExplosionParticles_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 66
-        height: 64
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,19 +113,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8782e9fb511c404182a42a6f473dcf0
+      spriteID: 6df6be221bb8abe46997fd9a391e960f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: excor_ability_time_1
+      name: ExplosionParticles_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 66
-        height: 64
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +133,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d41e461672329e4d9c8a3434151e890
+      spriteID: 71c8de2e653179e488df59d7bb3f94cb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: excor_ability_time_2
+      name: ExplosionParticles_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 2
-        width: 66
-        height: 64
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +153,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94ef64156b21d804f88e06ba1b99f0b7
+      spriteID: 5ecddeeb3f3c9094e824c2b22ed9dd5b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: excor_ability_time_3
+      name: ExplosionParticles_3
       rect:
         serializedVersion: 2
-        x: 198
-        y: 2
-        width: 66
-        height: 64
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,67 +173,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ece7e2dcfff591b49b640ad372e687c3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: excor_ability_time_4
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 2
-        width: 66
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 567970abbf76f38449bdfbe4d550a6bd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: excor_ability_time_5
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 2
-        width: 66
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 741a762de4642bd45881ebf31c8ddd58
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: excor_ability_time_6
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 2
-        width: 66
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4d3ab7f4e6f30f478bb70738edfd664
+      spriteID: aabac643a1303a14f987f82914cfbf80
       vertices: []
       indices: 
       edges: []
@@ -244,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 35c49e1c838c01540a482ef281119622
+    spriteID: 312fbe871b812f844b98c51c6cf144b5
     vertices: []
     indices: 
     edges: []
