@@ -10,6 +10,8 @@ public class ExorcistGun : MonoBehaviour
 
     [HideInInspector] public bool canShoot;
 
+    [SerializeField] private Animator anim;
+
     public float ReloadTime
     {
         get { return reloadTime; }
@@ -38,6 +40,7 @@ public class ExorcistGun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastShoot + shootCooldown && bulletsLeft > 0 && canShoot)
         {
+            anim.SetBool("Shooting", true);
             Debug.Log("Bang!");
 
             lastShoot = Time.time;
@@ -52,5 +55,10 @@ public class ExorcistGun : MonoBehaviour
             lastShoot = Time.time + reloadDiff;
             bulletsLeft = magSize;
         }
+    }
+
+    public void StopShooting()
+    {
+        anim.SetBool("Shooting", false);
     }
 }

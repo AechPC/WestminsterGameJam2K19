@@ -10,6 +10,7 @@ public class ExorcistMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;
 
     private Rigidbody2D rb;
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
@@ -18,11 +19,12 @@ public class ExorcistMovement : MonoBehaviour
 
     private void Update()
     {
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("VerticalSpeed", Mathf.Abs(rb.velocity.y));
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Vector2 movement = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-
 
             rb.velocity = movement;
         }

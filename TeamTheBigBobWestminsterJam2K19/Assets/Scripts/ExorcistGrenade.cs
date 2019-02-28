@@ -16,6 +16,8 @@ public class ExorcistGrenade : MonoBehaviour
 
     [HideInInspector] public bool canThrow;
 
+    [SerializeField] private Animator anim;
+
     private void Awake()
     {
         canThrow = true;
@@ -29,11 +31,17 @@ public class ExorcistGrenade : MonoBehaviour
             grenadeCount--;
             Rigidbody2D rb = Instantiate(grenade, grenadeSpawnPos.position, Quaternion.identity).GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(transform.rotation.eulerAngles.y < 90 ? throwDir.x : -throwDir.x, throwDir.y) * throwDis);
+            anim.SetBool("Throwing", true);
         }
     }
 
     public void GetGrenades(int grenades)
     {
         grenadeCount += grenades;
+    }
+
+    public void StopThrowingGrenade()
+    {
+        anim.SetBool("Throwing", false);
     }
 }
