@@ -11,7 +11,10 @@ public class WalkingEnemyMovement : MonoBehaviour, IDamageable
     [SerializeField] private float sightRange, listenRange, movementSpeed;
     private float listenRangeSqr;
 
+    [SerializeField] private Transform patrolPointLeft, patrolPointRight;
     private Transform playerTransform;
+
+    private bool patrollingLeft;
 
     private Rigidbody2D rb;
 
@@ -29,6 +32,15 @@ public class WalkingEnemyMovement : MonoBehaviour, IDamageable
             (transform.position - playerTransform.position).sqrMagnitude < listenRangeSqr)      // Listen
         {
             rb.velocity = new Vector2(transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(patrollingLeft ? -movementSpeed : movementSpeed, rb.velocity.y);
+
+            if (patrollingLeft ? transform.position.x < patrolPointLeft.position.x : transform.position.x > patrolPointRight.position.x)
+            {
+                patrollingLeft = !patrollingLeft;
+            }
         }
     }
 
