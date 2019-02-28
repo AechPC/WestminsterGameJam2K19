@@ -8,6 +8,8 @@ public class ExorcistGun : MonoBehaviour
     [SerializeField] private float range, reloadTime;
     private float lastShoot, reloadDiff;
 
+    [HideInInspector] public bool canShoot;
+
     public float ReloadTime
     {
         get { return reloadTime; }
@@ -27,14 +29,17 @@ public class ExorcistGun : MonoBehaviour
 
     private void Awake()
     {
+        canShoot = true;
         bulletsLeft = magSize;
         reloadDiff = reloadTime - shootCooldown;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastShoot + shootCooldown && bulletsLeft > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastShoot + shootCooldown && bulletsLeft > 0 && canShoot)
         {
+            Debug.Log("Bang!");
+
             lastShoot = Time.time;
             bulletsLeft--;
             RaycastHit2D hit = Physics2D.Raycast(gunPos.transform.position, transform.right, range, canHit);

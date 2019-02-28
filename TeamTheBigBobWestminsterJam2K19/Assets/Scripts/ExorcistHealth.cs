@@ -13,6 +13,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private Image healthBar;
 
+    [HideInInspector] public bool immune;
+
     private void Awake()
     {
         health = maxHealth;
@@ -20,6 +22,11 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
+        if (immune)
+        {
+            return;
+        }
+
         if (Time.time > lastDamageTime + invulnerabilityTime)
         {
             lastDamageTime = Time.time;

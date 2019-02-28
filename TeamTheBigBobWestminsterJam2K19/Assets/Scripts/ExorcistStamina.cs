@@ -7,7 +7,8 @@ public class ExorcistStamina : MonoBehaviour
 {
     [SerializeField] private Image staminaBar;
 
-    [SerializeField] private float maxStamina, staminaRegen;
+    public float maxStamina;
+    [SerializeField] private float staminaRegen;
     private float stamina;
     public float Stamina
     {
