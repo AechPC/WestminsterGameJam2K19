@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExorcistHealth : MonoBehaviour, IDamageable
 {
@@ -9,6 +10,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private float invulnerabilityTime;
     private float lastDamageTime;
+
+    [SerializeField] private Image healthBar;
 
     private void Awake()
     {
@@ -21,6 +24,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         {
             lastDamageTime = Time.time;
             health -= damage;
+
+            healthBar.fillAmount = (float)health / maxHealth;
 
             if (health < 1)
             {

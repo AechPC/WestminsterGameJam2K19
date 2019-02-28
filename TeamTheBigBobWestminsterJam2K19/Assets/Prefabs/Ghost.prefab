@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439334633738574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94699734, y: 1.988695, z: 0}
+  m_LocalPosition: {x: -0.08601189, y: 4.9468575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224729367512072692}
@@ -171,7 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   radius: 2
-  pushForce: 100
+  pushForce: 400
+  stunDuration: 8
 --- !u!114 &114973559558948100
 MonoBehaviour:
   m_ObjectHideFlags: 1
