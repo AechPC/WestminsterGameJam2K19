@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ExorcistHealth : MonoBehaviour, IDamageable
 {
@@ -37,6 +38,7 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
             if (health < 1)
             {
                 Debug.Log("You dead son. Do the game over thing");
+                GameOver();
             }
         }
     }
@@ -46,6 +48,12 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         if (other.gameObject.tag == "UnholyWater" && !immune)
         {
             Debug.Log("Exorcist diedead. Game over should ensue here");
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        SceneManager.LoadScene(4);
     }
 }
