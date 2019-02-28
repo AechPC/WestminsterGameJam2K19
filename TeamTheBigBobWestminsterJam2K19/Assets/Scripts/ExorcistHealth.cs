@@ -16,6 +16,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     [HideInInspector] public bool immune;
 
+    [SerializeField] private Animator anim;
+
     private void Awake()
     {
         health = maxHealth;
@@ -27,6 +29,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         {
             return;
         }
+
+        anim.SetBool("Damage", true);
 
         if (Time.time > lastDamageTime + invulnerabilityTime)
         {
@@ -55,5 +59,11 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
     private void GameOver()
     {
         SceneManager.LoadScene(4);
+    }
+
+    public void StopTakingDamage()
+    {
+        Debug.Log("Stopped taking damage");
+        anim.SetBool("Damage", false);
     }
 }

@@ -52,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,7 +107,7 @@ TextureImporter:
       bones: []
       spriteID: e5b9c0af23890784a8d210df61818296
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -127,7 +127,7 @@ TextureImporter:
       bones: []
       spriteID: 8418f5d3993a9564eae2a6f029ae4b9d
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -147,7 +147,7 @@ TextureImporter:
       bones: []
       spriteID: 2806b84c4fdd2774a993a045b5255a77
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -167,7 +167,7 @@ TextureImporter:
       bones: []
       spriteID: 0f628d529cc25284ea0ed17a4937c955
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -187,7 +187,7 @@ TextureImporter:
       bones: []
       spriteID: 24abc162fabcc4b4babcf5c4b77fbd43
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -207,7 +207,7 @@ TextureImporter:
       bones: []
       spriteID: f7657439ba5cd554788cb367896a2d52
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -227,7 +227,7 @@ TextureImporter:
       bones: []
       spriteID: ed45fe9fcaa71bf41bb9be5eda54087f
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline: []
@@ -235,12 +235,12 @@ TextureImporter:
     bones: []
     spriteID: d96a1adad06cc4f4fa310800e850d729
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
-  spritePackingTag:
+  spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
