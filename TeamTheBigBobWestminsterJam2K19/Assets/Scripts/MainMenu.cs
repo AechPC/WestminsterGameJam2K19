@@ -22,12 +22,12 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Remember to place the level as the next build index.
+        SceneManager.LoadScene(2);
     }
 
     public void ControlsScreen()
     {
-        SceneManager.LoadScene(2); //Assuming scene 2 is the controls screen.
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
