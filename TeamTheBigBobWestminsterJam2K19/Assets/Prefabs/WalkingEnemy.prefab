@@ -96,16 +96,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575085073866932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d04af9dfd97ca44aac4371d21b1d2bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a05b13ee2c039e4297bbd2cb4b8fed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exorcistLayer:
     serializedVersion: 2
-    m_Bits: 2048
-  health: 20
-  sightRange: 6
-  listenRange: 2
-  movementSpeed: 1
+    m_Bits: 512
+  health: 40
+  damageDealt: 10
+  sightRange: 7
+  listenRange: 3
+  movementSpeed: 4
   patrolPointLeft: {fileID: 0}
   patrolPointRight: {fileID: 0}
 --- !u!212 &212825870590141678

@@ -27,9 +27,20 @@ public class ExorcistMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * movementSpeed, rb.velocity.y);
-        if (movement.x != 0)
-            transform.rotation = Quaternion.Euler(0, movement.x > 0 ? 0 : 180, 0);
-        rb.velocity = movement;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            Vector2 movement = new Vector2(-movementSpeed, rb.velocity.y);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+
+
+            rb.velocity = movement;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            Vector2 movement = new Vector2(movementSpeed, rb.velocity.y);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            rb.velocity = movement;
+        }
     }
 }

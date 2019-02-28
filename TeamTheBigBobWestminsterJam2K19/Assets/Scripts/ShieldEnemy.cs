@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldEnemy : MonoBehaviour, IDamageable
+public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 {
     [SerializeField] private LayerMask exorcistLayer;
 
@@ -11,6 +11,8 @@ public class ShieldEnemy : MonoBehaviour, IDamageable
     [SerializeField] private int health, damageDealt;
 
     private Transform exorcistTransform;
+
+    private bool stunned;
 
     private Rigidbody2D rb;
 
@@ -22,6 +24,11 @@ public class ShieldEnemy : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
+        if (stunned)
+        {
+            return;
+        }
+
         if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -49,9 +56,21 @@ public class ShieldEnemy : MonoBehaviour, IDamageable
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Exorcist")
+        if (other.gameObject.tag == "Exorcist" && !stunned)
         {
             other.gameObject.GetComponent<IDamageable>().TakeDamage(damageDealt);
         }
+    }
+
+    public void Stun(float duration)
+    {
+        stunned = true;
+        StartCoroutine(UnStun(duration));
+    }
+
+    private IEnumerator UnStun(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        stunned = false;
     }
 }

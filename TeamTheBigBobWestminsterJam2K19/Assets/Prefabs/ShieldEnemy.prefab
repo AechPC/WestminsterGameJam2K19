@@ -49,15 +49,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1749626901287856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee811961d2dc6824c9b6d1345e8de25e, type: 3}
+  m_Script: {fileID: 11500000, guid: 04fc95b5981dafc439ebc15a396f13ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exorcistLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 512
   sightRange: 9
-  movementSpeed: 10
-  health: 120
+  movementSpeed: 7
+  health: 80
+  damageDealt: 30
 --- !u!212 &212105185844901882
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114471153035621666}
   - component: {fileID: 114561753787399350}
   - component: {fileID: 114928855389883528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Exorcist
   m_TagString: Exorcist
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4053409625027340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunNozzlePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  invulnerabilityTime: 0.7
 --- !u!114 &114471153035621666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 1
   reloadTime: 3
-  range: 10
+  range: 7
   magSize: 6
   gunPos: {fileID: 4053409625027340}
   canHit:
@@ -193,10 +194,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199491822619366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c01303c62cc9814b9c0f7b1c5367b58, type: 3}
+  m_Script: {fileID: 11500000, guid: 89b90527168803f4a80082d38c518a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
+  cooldown: 10
   damage: 30
   dimensions: {x: 4, y: 3}
 --- !u!212 &212592479579491282

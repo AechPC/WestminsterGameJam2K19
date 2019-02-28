@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingEnemy : MonoBehaviour, IDamageable
+public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 {
     [SerializeField] private LayerMask exorcistLayer;
 
@@ -14,7 +14,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable
     [SerializeField] private Transform patrolPointLeft, patrolPointRight;
     private Transform playerTransform;
 
-    private bool patrollingLeft;
+    private bool patrollingLeft, stunned;
 
     private Rigidbody2D rb;
 
@@ -27,6 +27,11 @@ public class WalkingEnemy : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
+        if (stunned)
+        {
+            return;
+        }
+
         if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer) ||   // Look left
             Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer) ||  // Look right
             (transform.position - playerTransform.position).sqrMagnitude < listenRangeSqr)      // Listen
@@ -57,10 +62,23 @@ public class WalkingEnemy : MonoBehaviour, IDamageable
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Exorcist")
+        if (other.gameObject.tag == "Exorcist" && !stunned)
         {
             other.gameObject.GetComponent<IDamageable>().TakeDamage(damageDealt);
             Debug.Log("Damaged player");
         }
+    }
+
+    public void Stun(float duration)
+    {
+        stunned = true;
+        StopAllCoroutines();
+        StartCoroutine(UnStun(duration));
+    }
+
+    private IEnumerator UnStun(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        stunned = false;
     }
 }
