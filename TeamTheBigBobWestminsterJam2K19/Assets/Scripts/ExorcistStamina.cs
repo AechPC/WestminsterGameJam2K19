@@ -7,7 +7,7 @@ public class ExorcistStamina : MonoBehaviour
 {
     [SerializeField] private Image staminaBar;
 
-    [SerializeField] private float maxStamina;
+    [SerializeField] private float maxStamina, staminaRegen;
     private float stamina;
     public float Stamina
     {
@@ -15,7 +15,7 @@ public class ExorcistStamina : MonoBehaviour
         set
         {
             stamina = value;
-
+            stamina = Mathf.Clamp(stamina, 0, maxStamina);
             staminaBar.fillAmount = stamina / maxStamina;
         }
     }
@@ -25,15 +25,8 @@ public class ExorcistStamina : MonoBehaviour
         stamina = maxStamina;
     }
 
-    // Use this for initialization
-    void Start()
+    private void FixedUpdate()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Stamina += staminaRegen;
     }
 }
