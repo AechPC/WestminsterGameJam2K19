@@ -19,7 +19,7 @@ public class GhostPossess : MonoBehaviour {
     private Renderer rend;
     private Collider2D coll;
 
-    private bool possessing;
+    private bool possessing, hasResetAButton, hasResetXButton;
 
     private void Awake()
     {
@@ -31,15 +31,21 @@ public class GhostPossess : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	private void Update ()
 	{
-	    if (!possessing)
+	    if (Input.GetAxis("ControllerA") == 0)
+	    {
+	        hasResetAButton = true;
+	    }
+
+        if (!possessing)
 	    {
 	        Platform possessablePlatform = GetPossessablePlatform();
 	        possessIndicator.enabled = possessablePlatform;
 
-	        if (possessablePlatform && Input.GetKeyDown(KeyCode.P))
+	        if (possessablePlatform && Input.GetAxis("ControllerA") > 0 && hasResetAButton)
 	        {
+	            hasResetAButton = false;
                 Possess(possessablePlatform);
 	        }
         }
@@ -61,7 +67,7 @@ public class GhostPossess : MonoBehaviour {
 
     private void UnPossess()
     {
-        transform.position = possessingPlatform.transform.position + new Vector3(0, 1);
+        transform.position = possessingPlatform.transform.position + new Vector3(0, 2);
         possessingPlatform = null;
         possessing = false;
         rend.enabled = true;
@@ -71,10 +77,11 @@ public class GhostPossess : MonoBehaviour {
 
     private void PossessUpdate()
     {
-        possessingPlatform.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * platformMovementSpeed);
+        possessingPlatform.Move(new Vector2(Input.GetAxis("ControllerHorizontal"), Input.GetAxis("ControllerVertical")) * platformMovementSpeed);
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetAxis("ControllerA") > 0 && hasResetAButton)
         {
+            hasResetAButton = false;
             UnPossess();
         }
     }
