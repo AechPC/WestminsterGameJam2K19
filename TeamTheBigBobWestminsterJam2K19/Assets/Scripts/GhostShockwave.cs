@@ -26,6 +26,8 @@ public class GhostShockwave : MonoBehaviour
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
             foreach (Collider2D coll in inRange)
             {
+                coll.GetComponent<SpecialPushable>()?.EnableMovement();
+
                 Rigidbody2D rb = coll.GetComponent<Rigidbody2D>();
                 if (rb)
                 {
