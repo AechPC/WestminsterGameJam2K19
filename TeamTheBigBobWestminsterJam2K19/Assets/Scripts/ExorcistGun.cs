@@ -34,7 +34,7 @@ public class ExorcistGun : MonoBehaviour
         reloadDiff = reloadTime - shootCooldown;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastShoot + shootCooldown && bulletsLeft > 0 && canShoot)
         {

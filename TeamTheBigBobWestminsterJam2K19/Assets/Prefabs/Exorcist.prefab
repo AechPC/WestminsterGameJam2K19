@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114747275099195416}
   - component: {fileID: 114179423170643736}
   - component: {fileID: 114355218985393980}
+  - component: {fileID: 114714970128716652}
   m_Layer: 9
   m_Name: Exorcist
   m_TagString: Exorcist
@@ -219,6 +220,17 @@ MonoBehaviour:
   canHit:
     serializedVersion: 2
     m_Bits: 1041
+--- !u!114 &114714970128716652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199491822619366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b5ee052c873e4e8c36a0e5179bb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114747275099195416
 MonoBehaviour:
   m_ObjectHideFlags: 1
