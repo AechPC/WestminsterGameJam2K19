@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 63103d503d503c346b08f27d20ffb2d4
+guid: 56f5cb8206c0f2f4282e2cb478f1e50b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: door_0
-    21300002: door_1
-    21300004: door_2
-    21300006: door_3
-    21300008: door_4
-    21300010: door_5
+    21300000: wakerChase_0
+    21300002: wakerChase_1
+    21300004: wakerChase_2
+    21300006: wakerChase_3
+    21300008: wakerChase_4
+    21300010: wakerChase_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,12 +90,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_0
+      name: wakerChase_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 64
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -104,18 +104,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88093b9d1aa81642b6d15bda75fe8a0
+      spriteID: 1ccf3ea0c34adf740a9014a3ec750185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_1
+      name: wakerChase_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 2
-        width: 64
+        x: 108
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d5f9b330d78984c98f26bb1e5bb461
+      spriteID: 6149e3f0b6dc5f04f96a5c474ad9c50a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_2
+      name: wakerChase_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 2
-        width: 64
+        x: 216
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -144,18 +144,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8559b62b3fa28f347935aa980e07a705
+      spriteID: 6c00f8236a43e4e48a079dd1c3dd9caa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_3
+      name: wakerChase_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 2
-        width: 64
+        x: 324
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,18 +164,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 070fa64b312db7a4b8f90f5c9371eec9
+      spriteID: 2b0746e035a3f8840a89c35a6dd0cffc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_4
+      name: wakerChase_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 2
-        width: 64
+        x: 432
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,18 +184,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba7c39606145f2347a2d38feb8ec3e28
+      spriteID: 6359f48f22a4b9e49a18488b59bdbb3c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_5
+      name: wakerChase_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 2
-        width: 64
+        x: 540
+        y: 0
+        width: 108
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f0489e9e3672546b5ff60c6f604f0f
+      spriteID: c770ec079bbbc4749ac5daa685b9af6b
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 69947ac425652b84cbcff1fdaabf628e
+    spriteID: 468df01e566ea714daa1ffbaecb05333
     vertices: []
     indices: 
     edges: []

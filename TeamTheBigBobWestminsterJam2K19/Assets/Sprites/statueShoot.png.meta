@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 63103d503d503c346b08f27d20ffb2d4
+guid: 5dfdb657b5434b04eb71e296c298fb59
 TextureImporter:
   fileIDToRecycleName:
-    21300000: door_0
-    21300002: door_1
-    21300004: door_2
-    21300006: door_3
-    21300008: door_4
-    21300010: door_5
+    21300000: statueShoot_0
+    21300002: statueShoot_1
+    21300004: statueShoot_2
+    21300006: statueShoot_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,11 +88,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_0
+      name: statueShoot_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -104,17 +102,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88093b9d1aa81642b6d15bda75fe8a0
+      spriteID: e0fa4014f9c294d429dbd57b9324cc24
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_1
+      name: statueShoot_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -124,17 +122,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d5f9b330d78984c98f26bb1e5bb461
+      spriteID: 6dfa7033e5f00344f8c3b8d58a6b044e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_2
+      name: statueShoot_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -144,17 +142,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8559b62b3fa28f347935aa980e07a705
+      spriteID: 817d5512ff959094e9cf24498c2e385e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_3
+      name: statueShoot_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -164,47 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 070fa64b312db7a4b8f90f5c9371eec9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 2
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba7c39606145f2347a2d38feb8ec3e28
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 2
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93f0489e9e3672546b5ff60c6f604f0f
+      spriteID: 59ac6b67f73a33b478241fba133c5f2a
       vertices: []
       indices: 
       edges: []
@@ -212,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 69947ac425652b84cbcff1fdaabf628e
+    spriteID: 500834d23f5daf346aca2d298275303e
     vertices: []
     indices: 
     edges: []

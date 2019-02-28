@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 63103d503d503c346b08f27d20ffb2d4
+guid: d1f74cf8dce90484dad1ba790f06f3b4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: door_0
-    21300002: door_1
-    21300004: door_2
-    21300006: door_3
-    21300008: door_4
-    21300010: door_5
+    21300000: walkerdie_0
+    21300002: walkerdie_1
+    21300004: walkerdie_2
+    21300006: walkerdie_3
+    21300008: walkerdie_4
+    21300010: walkerdie_5
+    21300012: walkerdie_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -51,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,11 +91,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_0
+      name: walkerdie_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -104,17 +105,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88093b9d1aa81642b6d15bda75fe8a0
+      spriteID: e5b9c0af23890784a8d210df61818296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_1
+      name: walkerdie_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -124,17 +125,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d5f9b330d78984c98f26bb1e5bb461
+      spriteID: 8418f5d3993a9564eae2a6f029ae4b9d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_2
+      name: walkerdie_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -144,17 +145,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8559b62b3fa28f347935aa980e07a705
+      spriteID: 2806b84c4fdd2774a993a045b5255a77
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_3
+      name: walkerdie_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -164,17 +165,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 070fa64b312db7a4b8f90f5c9371eec9
+      spriteID: 0f628d529cc25284ea0ed17a4937c955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_4
+      name: walkerdie_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -184,17 +185,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba7c39606145f2347a2d38feb8ec3e28
+      spriteID: 24abc162fabcc4b4babcf5c4b77fbd43
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_5
+      name: walkerdie_5
       rect:
         serializedVersion: 2
         x: 320
-        y: 2
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -204,7 +205,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f0489e9e3672546b5ff60c6f604f0f
+      spriteID: f7657439ba5cd554788cb367896a2d52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkerdie_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed45fe9fcaa71bf41bb9be5eda54087f
       vertices: []
       indices: 
       edges: []
@@ -212,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 69947ac425652b84cbcff1fdaabf628e
+    spriteID: d96a1adad06cc4f4fa310800e850d729
     vertices: []
     indices: 
     edges: []
