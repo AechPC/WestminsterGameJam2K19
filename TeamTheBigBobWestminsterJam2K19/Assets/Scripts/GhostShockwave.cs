@@ -8,6 +8,7 @@ public class GhostShockwave : MonoBehaviour
     [SerializeField] private float cooldown, radius, pushForce, stunDuration;
     private float lastUse;
 
+    public bool upgraded;
     private bool hasResetXButton;
 
     private void Update()
@@ -26,14 +27,18 @@ public class GhostShockwave : MonoBehaviour
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
             foreach (Collider2D coll in inRange)
             {
+                if (upgraded)
+                {
+                    coll.GetComponent<SpecialPushable>()?.EnableMovement();
+                    coll.GetComponent<IStunnable>()?.Stun(stunDuration);
+                }
+
                 Rigidbody2D rb = coll.GetComponent<Rigidbody2D>();
                 if (rb)
                 {
                     Vector2 direction = (rb.transform.position - transform.position).normalized;
                     rb.AddForce(direction * (radius - Vector2.Distance(transform.position, rb.transform.position)) * pushForce);
                 }
-
-                coll.GetComponent<IStunnable>()?.Stun(stunDuration);
             }
         }
     }
