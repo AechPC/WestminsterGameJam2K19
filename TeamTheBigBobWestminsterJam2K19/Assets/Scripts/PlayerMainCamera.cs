@@ -15,6 +15,8 @@ public class PlayerMainCamera : MonoBehaviour {
 
 	private Transform target;
 
+	public Vector3 offset;
+
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindWithTag("Exorcist").transform;
@@ -23,6 +25,6 @@ public class PlayerMainCamera : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		transform.position = new Vector3(target.position.x, target.position.y + 3.3f, -10);
+		transform.position = new Vector3(target.position.x, target.position.y + 3.3f, -10) + offset;
 	}
 }
