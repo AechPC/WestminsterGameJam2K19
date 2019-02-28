@@ -9,7 +9,7 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
     [SerializeField] private int maxHealth;
     private int health;
 
-    [SerializeField] private float invulnerabilityTime;
+    [SerializeField] private float invulnerabilityTime, damageTakenDuration;
     private float lastDamageTime;
 
     [SerializeField] private Image healthBar;
@@ -18,8 +18,13 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private Animator anim;
 
+    private SpriteRenderer rend;
+
+    [SerializeField] private Sprite damageTaken;
+
     private void Awake()
     {
+        rend = GetComponent<SpriteRenderer>();
         health = maxHealth;
     }
 
@@ -31,6 +36,8 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         }
 
         anim.SetBool("Damage", true);
+        //rend.sprite = damageTaken;
+        //StartCoroutine(StopTakingDamage());
 
         if (Time.time > lastDamageTime + invulnerabilityTime)
         {
@@ -66,4 +73,11 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         Debug.Log("Stopped taking damage");
         anim.SetBool("Damage", false);
     }
+
+    //private IEnumerator StopTakingDamage()
+    //{
+    //    yield return new WaitForSeconds(damageTakenDuration);
+    //    Debug.Log("Stopped taking damage");
+    //    anim.SetBool("Damage", false);
+    //}
 }
