@@ -25,7 +25,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindWithTag("Exorcist").transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer) ||   // Look left
             Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer) ||  // Look right
