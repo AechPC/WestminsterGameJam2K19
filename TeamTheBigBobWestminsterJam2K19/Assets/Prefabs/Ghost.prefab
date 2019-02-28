@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 58380403741789276}
   - component: {fileID: 114376209820972640}
   - component: {fileID: 114807052097630878}
+  - component: {fileID: 50948046931909340}
+  - component: {fileID: 114673432950887680}
   m_Layer: 8
   m_Name: Ghost
   m_TagString: Untagged
@@ -80,6 +82,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50948046931909340
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439334633738574}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58380403741789276
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -109,6 +131,17 @@ MonoBehaviour:
   maxPlatformPossessDis: 4
   platformMovementSpeed: 0.2
   possessIndicator: {fileID: 114973559558948100}
+--- !u!114 &114673432950887680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439334633738574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab2825e12c02404f97f6cd22d3749c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114680484726393278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,9 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2a82c6afdea6d4d91b7e186195198d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
-  radius: 2
-  pushForce: 100
+  cooldown: 0
+  radius: 3
+  pushForce: 400
+  stunDuration: 0
 --- !u!114 &114973559558948100
 MonoBehaviour:
   m_ObjectHideFlags: 1
