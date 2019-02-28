@@ -7,6 +7,9 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
     [SerializeField] private int maxHealth;
     private int health;
 
+    [SerializeField] private float invulnerabilityTime;
+    private float lastDamageTime;
+
     private void Awake()
     {
         health = maxHealth;
@@ -14,11 +17,15 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-
-        if (health < 1)
+        if (Time.time > lastDamageTime + invulnerabilityTime)
         {
-            Debug.Log("You dead son. Do the game over thing");
+            lastDamageTime = Time.time;
+            health -= damage;
+
+            if (health < 1)
+            {
+                Debug.Log("You dead son. Do the game over thing");
+            }
         }
     }
 }

@@ -197,7 +197,7 @@ Prefab:
     - target: {fileID: 50309336348402872, guid: b9ab6df3dfa535642b10b72281004268,
         type: 2}
       propertyPath: m_GravityScale
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1199491822619366, guid: b9ab6df3dfa535642b10b72281004268, type: 2}
       propertyPath: m_TagString
@@ -206,6 +206,11 @@ Prefab:
     - target: {fileID: 1199491822619366, guid: b9ab6df3dfa535642b10b72281004268, type: 2}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351298705238306, guid: b9ab6df3dfa535642b10b72281004268,
+        type: 2}
+      propertyPath: invulnerabilityTime
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ab6df3dfa535642b10b72281004268, type: 2}
@@ -392,6 +397,11 @@ Prefab:
       propertyPath: patrolPointRight
       value: 
       objectReference: {fileID: 848972461}
+    - target: {fileID: 114333758594351440, guid: 3b0d1f2a056d7a1439b63a9790f8c40d,
+        type: 2}
+      propertyPath: damageDealt
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b0d1f2a056d7a1439b63a9790f8c40d, type: 2}
   m_IsPrefabAsset: 0

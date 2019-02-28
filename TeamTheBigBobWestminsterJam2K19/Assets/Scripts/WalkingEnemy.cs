@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingEnemyMovement : MonoBehaviour, IDamageable
+public class WalkingEnemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private LayerMask exorcistLayer;
 
-    [SerializeField] private int health;
+    [SerializeField] private int health, damageDealt;
 
     [SerializeField] private float sightRange, listenRange, movementSpeed;
     private float listenRangeSqr;
@@ -52,6 +52,15 @@ public class WalkingEnemyMovement : MonoBehaviour, IDamageable
         {
             Debug.Log("Walking enemy was killedead");
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Exorcist")
+        {
+            other.gameObject.GetComponent<IDamageable>().TakeDamage(damageDealt);
+            Debug.Log("Damaged player");
         }
     }
 }
