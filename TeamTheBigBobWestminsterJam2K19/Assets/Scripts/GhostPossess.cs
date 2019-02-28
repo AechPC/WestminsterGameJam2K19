@@ -10,7 +10,7 @@ public class GhostPossess : MonoBehaviour {
     private float platformPossessDisSqr;
 
     private Platform[] platforms;
-    private Platform possessingPlatform;
+    private Platform possessingPlatform, toPossess;
 
     [SerializeField] private Image possessIndicator;
 
@@ -20,6 +20,8 @@ public class GhostPossess : MonoBehaviour {
     private Collider2D coll;
 
     private bool possessing, hasResetAButton, hasResetXButton;
+
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
@@ -46,8 +48,9 @@ public class GhostPossess : MonoBehaviour {
 	        if (possessablePlatform && Input.GetAxis("ControllerA") > 0 && hasResetAButton)
 	        {
 	            hasResetAButton = false;
-                Possess(possessablePlatform);
-	        }
+	            toPossess = possessablePlatform;
+	            anim.SetBool("Possess", true);
+            }
         }
 	    else
 	    {
@@ -55,9 +58,14 @@ public class GhostPossess : MonoBehaviour {
 	    }
 	}
 
-    private void Possess(Platform platform)
+    public void Possess()
     {
-        possessingPlatform = platform;
+        if (!anim.GetBool("Possess"))
+        {
+            return;
+        }
+
+        possessingPlatform = toPossess;
         possessing = true;
         rend.enabled = false;
         coll.enabled = false;
@@ -67,6 +75,7 @@ public class GhostPossess : MonoBehaviour {
 
     private void UnPossess()
     {
+        anim.SetBool("Possess", false);
         transform.position = possessingPlatform.transform.position + new Vector3(0, 2);
         possessingPlatform = null;
         possessing = false;

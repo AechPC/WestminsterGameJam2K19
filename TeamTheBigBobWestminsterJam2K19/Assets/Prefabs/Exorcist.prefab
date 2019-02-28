@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  abilityAnim: {fileID: 95582525602314310}
 --- !u!114 &114471153035621666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,6 +339,7 @@ MonoBehaviour:
   revertTolerance: 0.95
   staminaCost: 1.2
   minStaminaToActivate: 10
+  abilityAnim: {fileID: 95582525602314310}
 --- !u!114 &114928855389883528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,6 +354,7 @@ MonoBehaviour:
   damage: 30
   staminaCost: 60
   dimensions: {x: 4, y: 3}
+  abilityAnim: {fileID: 95582525602314310}
 --- !u!212 &212592479579491282
 SpriteRenderer:
   m_ObjectHideFlags: 1
