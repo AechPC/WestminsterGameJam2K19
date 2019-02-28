@@ -10,7 +10,7 @@ public class GhostMovement : MonoBehaviour
 	// Update is called once per frame
 	private void FixedUpdate ()
 	{
-	    Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * movementSpeed;
+	    Vector2 movement = new Vector2(Input.GetAxis("ControllerHorizontal"), Input.GetAxis("ControllerVertical")) * movementSpeed;
 	    transform.Translate(movement);
 	}
 }

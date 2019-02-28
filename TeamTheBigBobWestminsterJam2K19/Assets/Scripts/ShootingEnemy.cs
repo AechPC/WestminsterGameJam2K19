@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemy : MonoBehaviour, IDamageable
+public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
 {
     [SerializeField] private LayerMask exorcistLayer;
 
@@ -54,5 +54,10 @@ public class ShootingEnemy : MonoBehaviour, IDamageable
             Debug.Log("Shooting enemy was DECIMATED!");
             Destroy(gameObject);
         }
+    }
+
+    public void Stun(float duration)
+    {
+        lastFireTime = Time.time + duration;
     }
 }

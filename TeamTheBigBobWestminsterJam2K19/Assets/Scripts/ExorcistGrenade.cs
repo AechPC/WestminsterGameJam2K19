@@ -14,14 +14,17 @@ public class ExorcistGrenade : MonoBehaviour
 
     [SerializeField] private int grenadeCount;
 
+    [HideInInspector] public bool canThrow;
+
     private void Awake()
     {
+        canThrow = true;
         throwDir = new Vector2(Mathf.Cos(throwAngle * Mathf.Deg2Rad), Mathf.Sin(throwAngle * Mathf.Deg2Rad));
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
+        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0 && canThrow)
         {
             grenadeCount--;
             Rigidbody2D rb = Instantiate(grenade, grenadeSpawnPos.position, Quaternion.identity).GetComponent<Rigidbody2D>();

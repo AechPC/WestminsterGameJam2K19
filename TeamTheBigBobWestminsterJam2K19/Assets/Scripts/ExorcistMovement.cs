@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ExorcistMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed, raycastDis, jumpForce;
+    public float movementSpeed;
+    [SerializeField] private float raycastDis, jumpForce;
 
     [SerializeField] private LayerMask groundLayers;
 
@@ -15,21 +16,30 @@ public class ExorcistMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-	private void Update () {
-	    //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers); // For testing distance to ground for Raycast
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            Vector2 movement = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+
+
+            rb.velocity = movement;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            Vector2 movement = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+            rb.velocity = movement;
+        }
+
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers); // For testing distance to ground for Raycast
         //Debug.Log(hit.distance);
 
-	    if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && Input.GetKeyDown(KeyCode.W))
-	    {
-	        rb.AddForce(new Vector2(0, jumpForce));
-	    }
-    }
-
-    private void FixedUpdate()
-    {
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * movementSpeed, rb.velocity.y);
-        if (movement.x != 0)
-            transform.rotation = Quaternion.Euler(0, movement.x > 0 ? 0 : 180, 0);
-        rb.velocity = movement;
+        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && Input.GetKeyDown(KeyCode.W))
+        {
+            rb.AddForce(new Vector2(0, jumpForce));
+        }
     }
 }

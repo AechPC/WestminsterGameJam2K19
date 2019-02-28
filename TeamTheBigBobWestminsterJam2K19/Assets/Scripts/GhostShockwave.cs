@@ -5,24 +5,35 @@ using UnityEngine;
 
 public class GhostShockwave : MonoBehaviour
 {
-    [SerializeField] private float cooldown, radius, pushForce;
+    [SerializeField] private float cooldown, radius, pushForce, stunDuration;
     private float lastUse;
 
-    void Update()
+    private bool hasResetXButton;
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O) && Time.time > lastUse + cooldown)
+        if (Input.GetAxis("ControllerX") == 0)
         {
+            hasResetXButton = true;
+        }
+
+        if (Input.GetAxis("ControllerX") > 0 && Time.time > lastUse + cooldown)
+        {
+            hasResetXButton = false;
             Debug.Log("BLASTING!");
             lastUse = Time.time;
 
-            Rigidbody2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius).Select(c => c.GetComponent<Rigidbody2D>()).ToArray();
-            foreach (Rigidbody2D rigidbody in inRange)
+            Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, radius);
+            foreach (Collider2D coll in inRange)
             {
-                if (rigidbody)
+                Rigidbody2D rb = coll.GetComponent<Rigidbody2D>();
+                if (rb)
                 {
-                    Vector2 direction = (rigidbody.transform.position - transform.position).normalized;
-                    rigidbody.AddForce(direction * (radius - Vector2.Distance(transform.position, rigidbody.transform.position)) * pushForce);
+                    Vector2 direction = (rb.transform.position - transform.position).normalized;
+                    rb.AddForce(direction * (radius - Vector2.Distance(transform.position, rb.transform.position)) * pushForce);
                 }
+
+                coll.GetComponent<IStunnable>()?.Stun(stunDuration);
             }
         }
     }
