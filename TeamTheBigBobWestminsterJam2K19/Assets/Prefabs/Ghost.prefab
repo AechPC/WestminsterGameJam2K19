@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   radius: 2
-  pushForce: 400
+  pushForce: 700
   stunDuration: 8
   upgraded: 0
   abilityAnim: {fileID: 95008086020885828}

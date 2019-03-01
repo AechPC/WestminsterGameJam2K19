@@ -48,6 +48,11 @@ public class MainMenu : MonoBehaviour
         panelGroup.blocksRaycasts = true;
     }
 
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void ContinueGame()
     {
         Time.timeScale = 1;

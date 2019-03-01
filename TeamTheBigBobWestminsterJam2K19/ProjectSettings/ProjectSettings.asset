@@ -616,7 +616,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: ed7aba2f-38dc-4054-bb8e-64c630d9c3bf
   projectName: TeamTheBigBobWestminsterJam2K19
   organizationId: phillip-2153356

@@ -76,7 +76,7 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
         audio.clip = shootSFX;
         audio.Play();
         lastFireTime = Time.time;
-        Rigidbody2D rb = Instantiate(arrow, arrowStart.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y < 90 ? 270 : 90)).GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = Instantiate(arrow, arrowStart.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y < 90 ? 0 : 180)).GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(transform.rotation.eulerAngles.y < 90 ? arrowSpeed : -arrowSpeed, 0);
         anim.SetBool("Shooting", false);
     }
