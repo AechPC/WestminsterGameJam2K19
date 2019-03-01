@@ -11,6 +11,7 @@ TagManager:
   - ExorcistUpgrade
   - GhostUpgrade
   - UnholyWater
+  - ProgressManager
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Exorcist
   - UnholyWater
   - Ghost
-  - 
+  - Enemy
   - 
   - 
   - 

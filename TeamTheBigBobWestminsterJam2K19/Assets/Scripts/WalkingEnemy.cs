@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 {
-    [SerializeField] private LayerMask exorcistLayer;
+    [SerializeField] private LayerMask sightLayers;
 
     [SerializeField] private int health, damageDealt;
 
@@ -20,8 +19,11 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         listenRangeSqr = Mathf.Pow(listenRange, 2);
         playerTransform = GameObject.FindWithTag("Exorcist").transform;
@@ -35,9 +37,18 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
             return;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer) ||   // Look left
-            Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer) ||  // Look right
-            (transform.position - playerTransform.position).sqrMagnitude < listenRangeSqr)      // Listen
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, sightRange, sightLayers);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, sightRange, sightLayers);
+
+        if (hitRight.transform && hitRight.transform.tag == "Exorcist")
+        {
+            rb.velocity = new Vector2((transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed) * Time.deltaTime, rb.velocity.y);
+        }
+        else if (hitLeft.transform && hitLeft.transform.tag == "Exorcist")
+        {
+            rb.velocity = new Vector2((transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed) * Time.deltaTime, rb.velocity.y);
+        }
+        else if ((transform.position - playerTransform.position).sqrMagnitude < listenRangeSqr) // Listen
         {
             rb.velocity = new Vector2((transform.position.x - playerTransform.position.x < 0 ? movementSpeed : -movementSpeed) * Time.deltaTime, rb.velocity.y);
         }
@@ -50,12 +61,18 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
                 patrollingLeft = !patrollingLeft;
             }
         }
+
+        if (Mathf.Abs(rb.velocity.x) > 0.01f)
+        {
+            transform.rotation = Quaternion.Euler(0, rb.velocity.x > 0 ? 0 : 180, 0);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         anim.SetBool("Damage", true);
         health -= damage;
+        audio.Play();
 
         if (health < 1)
         {

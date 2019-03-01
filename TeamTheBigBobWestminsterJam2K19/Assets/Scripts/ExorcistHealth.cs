@@ -18,8 +18,13 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip hitSFX;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         health = maxHealth;
     }
 
@@ -30,11 +35,11 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
             return;
         }
 
-        
-        anim.SetBool("Damage", true);
-
         if (Time.time > lastDamageTime + invulnerabilityTime)
         {
+            audio.clip = hitSFX;
+            audio.Play();
+            anim.SetBool("Damage", true);
             lastDamageTime = Time.time;
             health -= damage;
 

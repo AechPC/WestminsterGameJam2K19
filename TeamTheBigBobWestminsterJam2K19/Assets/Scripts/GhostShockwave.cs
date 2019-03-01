@@ -11,7 +11,16 @@ public class GhostShockwave : MonoBehaviour
     public bool upgraded;
     private bool hasResetXButton;
 
-    [SerializeField] private Animator abilityAnim;
+    [SerializeField] private Animator abilityAnim, anim;
+
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip shockwaveSFX;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -22,7 +31,11 @@ public class GhostShockwave : MonoBehaviour
 
         if (Input.GetAxis("ControllerX") > 0 && Time.time > lastUse + cooldown)
         {
+
             abilityAnim.SetTrigger(upgraded ? "UnholyII" : "Unholy");
+            audio.clip = shockwaveSFX;
+            audio.Play();
+            anim.SetTrigger("Shockwave");
 
             hasResetXButton = false;
             Debug.Log("BLASTING!");

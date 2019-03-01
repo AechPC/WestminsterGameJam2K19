@@ -12,6 +12,10 @@ public class ExorcistGun : MonoBehaviour
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip shootSFX;
+
     public float ReloadTime
     {
         get { return reloadTime; }
@@ -31,6 +35,7 @@ public class ExorcistGun : MonoBehaviour
 
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         canShoot = true;
         bulletsLeft = magSize;
         reloadDiff = reloadTime - shootCooldown;
@@ -41,7 +46,8 @@ public class ExorcistGun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > lastShoot + shootCooldown && bulletsLeft > 0 && canShoot)
         {
             anim.SetBool("Shooting", true);
-            Debug.Log("Bang!");
+            audio.clip = shootSFX;
+            audio.Play();
 
             lastShoot = Time.time;
             bulletsLeft--;
