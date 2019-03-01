@@ -21,8 +21,10 @@ GameObject:
   - component: {fileID: 4920617716992950}
   - component: {fileID: 212105185844901882}
   - component: {fileID: 114570721699155116}
-  - component: {fileID: 50324974568898936}
   - component: {fileID: 61741362014325326}
+  - component: {fileID: 50494269792484932}
+  - component: {fileID: 61971347974214716}
+  - component: {fileID: 95655661477395364}
   m_Layer: 0
   m_Name: ShieldEnemy
   m_TagString: Untagged
@@ -37,13 +39,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749626901287856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5502864, y: -2.9687011, z: 0}
+  m_LocalPosition: {x: 1.84, y: -2.63, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50324974568898936
+--- !u!50 &50494269792484932
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -88,6 +90,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1}
   m_EdgeRadius: 0
+--- !u!61 &61971347974214716
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749626901287856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!95 &95655661477395364
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749626901287856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c237996d9531adc4f94c2cb75665d2bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114570721699155116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +150,8 @@ MonoBehaviour:
   sightRange: 9
   movementSpeed: 400
   health: 80
-  damageDealt: 30
+  damageDealt: 40
+  anim: {fileID: 95655661477395364}
 --- !u!212 &212105185844901882
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -141,8 +187,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea70aeefa11a4144d882479504a37a97, type: 3}
-  m_Color: {r: 0.7075472, g: 0.50980395, b: 0.24864283, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1491d346480ba6c4096e771b5584523d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

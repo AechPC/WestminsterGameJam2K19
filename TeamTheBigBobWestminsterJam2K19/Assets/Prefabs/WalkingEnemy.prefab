@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114333758594351440}
   - component: {fileID: 50870645622620510}
   - component: {fileID: 61654636088366954}
+  - component: {fileID: 95248085598717030}
   m_Layer: 0
   m_Name: WalkingEnemy
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575085073866932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.79, y: -0.69, z: 0}
+  m_LocalPosition: {x: 2.8, y: -0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +89,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.73}
   m_EdgeRadius: 0
+--- !u!95 &95248085598717030
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575085073866932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08667b4dd6725004b901d48d585532b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114333758594351440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +128,7 @@ MonoBehaviour:
   movementSpeed: 120
   patrolPointLeft: {fileID: 0}
   patrolPointRight: {fileID: 0}
+  anim: {fileID: 95248085598717030}
 --- !u!212 &212825870590141678
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -144,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b6b98ecfc3f831c4a98baa3ef1dedcd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74f7c9baa27a3754db002b27e5cd755e, type: 3}
   m_Color: {r: 1, g: 0, b: 0.6223974, a: 1}
   m_FlipX: 0
   m_FlipY: 0

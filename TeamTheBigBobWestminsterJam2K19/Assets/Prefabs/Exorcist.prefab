@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 0.35, z: -0.085610375}
+  m_LocalPosition: {x: -10.95, y: -2.54, z: -0.085610375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4053409625027340}
@@ -139,7 +139,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 383b4a8b177d8454d9874d8b4268b7b6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   staminaBar: {fileID: 0}
   maxStamina: 100
   staminaRegen: 0.2
@@ -166,12 +166,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8d90f53c0423034593c0e2e668f5036, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   maxHealth: 100
   invulnerabilityTime: 0.7
+  damageTakenDuration: 0
   healthBar: {fileID: 0}
   immune: 0
+  anim: {fileID: 0}
 --- !u!114 &114355218985393980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,8 +183,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dac120c7a825b2419c18e438af43abd, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   duration: 5
 --- !u!114 &114471153035621666
 MonoBehaviour:
@@ -193,14 +195,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a43f47d6551984344ad7ba13f820b110, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   grenade: {fileID: 1521773837945076, guid: 229b6f8efc2ef9d4592abf878af1f139, type: 2}
   grenadeSpawnPos: {fileID: 4053409625027340}
   throwAngle: 45
   throwDis: 600
   grenadeCount: 3
   canThrow: 0
+  anim: {fileID: 0}
 --- !u!114 &114561753787399350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,8 +213,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8e6584baa130fd4384ebb418d1a7679, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   movementSpeed: 240
   raycastDis: 0.62
   jumpForce: 800
@@ -228,12 +231,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9af8ec3b9b8882d4c9f824ed9317c10a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   shootCooldown: 1
   range: 7
   reloadTime: 3
   canShoot: 0
+  anim: {fileID: 0}
   magSize: 6
   gunPos: {fileID: 4053409625027340}
   canHit:
@@ -248,8 +252,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae6b5ee052c873e4e8c36a0e5179bb49, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114747275099195416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,8 +263,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4973181317c62fc49bb71a02f49b7a7f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   timeScaleTarget: 0.3
   slowSpeed: 0.4
   revertSpeed: 0.8
@@ -276,8 +280,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89b90527168803f4a80082d38c518a0c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 30
   staminaCost: 60
   dimensions: {x: 4, y: 3}
