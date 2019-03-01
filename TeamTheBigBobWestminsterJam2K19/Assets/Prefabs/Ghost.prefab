@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4530899679360072}
   - component: {fileID: 212705907262478098}
   - component: {fileID: 95008086020885828}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AbilityIcons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 223032919078055872}
   - component: {fileID: 114680484726393278}
   - component: {fileID: 114701885327949412}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 114131422937063612}
   - component: {fileID: 95864336198808328}
   - component: {fileID: 61388447053002800}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Ghost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 224964170720754384}
   - component: {fileID: 222123107250125690}
   - component: {fileID: 114973559558948100}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439334633738574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3626633, y: 1.2314315, z: 0}
+  m_LocalPosition: {x: 2.139554, y: -0.22967052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224729367512072692}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca681348262e01418d6fc95e9ff5a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.6
+  movementSpeed: 0.2
 --- !u!114 &114807052097630878
 MonoBehaviour:
   m_ObjectHideFlags: 1
