@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 50020676169998368}
   - component: {fileID: 114982820243887702}
   - component: {fileID: 82782667349337060}
+  - component: {fileID: 114583091921532442}
+  - component: {fileID: 114193998901113542}
   m_Layer: 11
   m_Name: Ghost
   m_TagString: Ghost
@@ -108,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439334633738574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08601189, y: 4.9468575, z: 0}
+  m_LocalPosition: {x: 2.139554, y: -0.22967052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224729367512072692}
@@ -303,6 +305,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5d48a89c621fd4981460c5feb5bab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114193998901113542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439334633738574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ae70b4bada0bd419afc98ae488c198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114376209820972640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,10 +328,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlatformPossessDis: 4
-  platformMovementSpeed: 0.2
+  platformMovementSpeed: 0.1
   possessIndicator: {fileID: 114973559558948100}
   anim: {fileID: 95864336198808328}
   shockwaveSFX: {fileID: 8300000, guid: 5f15460ea2a6c7b41afeea38b75b4109, type: 3}
+--- !u!114 &114583091921532442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439334633738574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab2825e12c02404f97f6cd22d3749c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114680484726393278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,14 +391,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca681348262e01418d6fc95e9ff5a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 6
 --- !u!114 &114807052097630878
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439334633738574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c2a82c6afdea6d4d91b7e186195198d, type: 3}
   m_Name: 

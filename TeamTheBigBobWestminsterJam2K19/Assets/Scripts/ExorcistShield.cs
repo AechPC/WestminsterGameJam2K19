@@ -25,7 +25,7 @@ public class ExorcistShield : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V) && stamina.Stamina == stamina.maxStamina)
         {
-            stamina.Stamina = 0;
+            stamina.Stamina -= 50;
             EnableShield();
             StartCoroutine(DisableShield(duration));
         }
