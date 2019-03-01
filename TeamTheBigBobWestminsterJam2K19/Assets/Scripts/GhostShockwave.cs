@@ -11,7 +11,7 @@ public class GhostShockwave : MonoBehaviour
     public bool upgraded;
     private bool hasResetXButton;
 
-    [SerializeField] private Animator abilityAnim;
+    [SerializeField] private Animator abilityAnim, anim;
 
     private void Update()
     {
@@ -22,7 +22,9 @@ public class GhostShockwave : MonoBehaviour
 
         if (Input.GetAxis("ControllerX") > 0 && Time.time > lastUse + cooldown)
         {
+
             abilityAnim.SetTrigger(upgraded ? "UnholyII" : "Unholy");
+            anim.SetTrigger("Shockwave");
 
             hasResetXButton = false;
             Debug.Log("BLASTING!");
