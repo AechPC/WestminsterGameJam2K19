@@ -224,6 +224,8 @@ MonoBehaviour:
     m_Bits: 769
   sightRange: 9
   movementSpeed: 200
+  cameraShakeIntensity: 0.1
+  cameraShakeDuration: 0.1
   health: 70
   damageDealt: 20
   anim: {fileID: 95655661477395364}

@@ -6,7 +6,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 {
     [SerializeField] private LayerMask sightLayers;
 
-    [SerializeField] private float sightRange, movementSpeed;
+    [SerializeField] private float sightRange, movementSpeed, cameraShakeIntensity, cameraShakeDuration;
 
     [SerializeField] private int health, damageDealt;
 
@@ -22,8 +22,11 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     [SerializeField] private AudioClip footstepSFX, hitSFX;
 
+    private CameraShakeDoors cameraShake;
+
     private void Awake()
     {
+        cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShakeDoors>();
         audio = GetComponent<AudioSource>();
         exorcistTransform = GameObject.FindWithTag("Exorcist").transform;
         rb = GetComponent<Rigidbody2D>();
@@ -45,6 +48,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
             audio.clip = footstepSFX;
             if (!audio.isPlaying)
             {
+                cameraShake.Shake(cameraShakeIntensity, cameraShakeDuration);
                 audio.Play();
             }
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -56,6 +60,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
             audio.clip = footstepSFX;
             if (!audio.isPlaying)
             {
+                cameraShake.Shake(cameraShakeIntensity, cameraShakeDuration);
                 audio.Play();
             }
             transform.rotation = Quaternion.Euler(0, 180, 0);

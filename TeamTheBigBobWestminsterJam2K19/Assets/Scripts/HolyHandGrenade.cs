@@ -7,7 +7,7 @@ public class HolyHandGrenade : MonoBehaviour
 {
     [SerializeField] private int damage;
 
-    [SerializeField] private float fuseTime, range;
+    [SerializeField] private float fuseTime, range, velocityLimit;
     private float startTime;
 
     private bool hasExploded;
@@ -16,8 +16,11 @@ public class HolyHandGrenade : MonoBehaviour
 
     private AudioSource audio;
 
+    private Rigidbody2D rb;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         audio = GetComponent<AudioSource>();
         particle = GetComponent<ParticleSystem>();
     }
@@ -44,6 +47,14 @@ public class HolyHandGrenade : MonoBehaviour
             Debug.Log("BOOM! Holyness overcomes you");
             GetComponent<SpriteRenderer>().enabled = false;
             StartCoroutine(Destroy(particle.main.duration));
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb.velocity.magnitude > velocityLimit)
+        {
+            rb.velocity = rb.velocity.normalized * velocityLimit;
         }
     }
 

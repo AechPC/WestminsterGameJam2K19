@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ExorcistHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int maxHealth;
+    [SerializeField] private int maxHealth, healthPickupHealing;
     private int health;
 
     [SerializeField] private float invulnerabilityTime;
@@ -59,6 +59,16 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
         {
             Debug.Log("Exorcist diedead. Game over should ensue here");
             GameOver();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HealthPickup")
+        {
+            Destroy(other.gameObject);
+            health = Mathf.Clamp(health + healthPickupHealing, 0, maxHealth);
+            healthBar.fillAmount = (float)health / maxHealth;
         }
     }
 
