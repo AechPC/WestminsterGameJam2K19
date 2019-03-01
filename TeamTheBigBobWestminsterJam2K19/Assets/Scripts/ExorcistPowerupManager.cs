@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class ExorcistPowerupManager : MonoBehaviour
 {
-    public static byte pickupsCollected = 3;
+    public static byte pickupsCollected = 0;
+
+    private ProgressManager progressManager;
+
+    private void Start()
+    {
+        progressManager = GameObject.FindWithTag("ProgressManager").GetComponent<ProgressManager>();
+    }
 
     private void OnLevelWasLoaded(int level)
     {
-        pickupsCollected = 3;
+        pickupsCollected = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -28,6 +35,7 @@ public class ExorcistPowerupManager : MonoBehaviour
                     break;
             }
 
+            progressManager.SetAbilityGained(false, pickupsCollected);
             pickupsCollected++;
             Destroy(other.gameObject);
         }
