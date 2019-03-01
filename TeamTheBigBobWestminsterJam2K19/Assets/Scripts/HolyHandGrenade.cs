@@ -10,15 +10,30 @@ public class HolyHandGrenade : MonoBehaviour
     [SerializeField] private float fuseTime, range;
     private float startTime;
 
+    private bool hasExploded;
+
+    private ParticleSystem particle;
+
+    private AudioSource audio;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+        particle = GetComponent<ParticleSystem>();
+    }
+
     private void Start()
     {
         startTime = Time.time;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Time.time > startTime + fuseTime)
+        if (Time.time > startTime + fuseTime && !hasExploded)
         {
+            particle.Play(true);
+            audio.Play();
+            hasExploded = true;
             IDamageable[] hit = Physics2D.OverlapCircleAll(transform.position, range).Select(c => c.transform.GetComponent<IDamageable>()).ToArray();
 
             foreach (IDamageable damageable in hit)
@@ -27,7 +42,14 @@ public class HolyHandGrenade : MonoBehaviour
             }
 
             Debug.Log("BOOM! Holyness overcomes you");
-            Destroy(gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(Destroy(particle.main.duration));
         }
+    }
+
+    private IEnumerator Destroy(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }

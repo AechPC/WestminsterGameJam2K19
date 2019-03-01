@@ -15,6 +15,17 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     [SerializeField] private int health;
 
+    [SerializeField] private Animator anim;
+
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip shootSFX, hitSFX;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
@@ -25,7 +36,6 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
             {
                 Shoot();
             }
-
         }
         else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
         {
@@ -40,6 +50,9 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private void Shoot()
     {
+        anim.SetBool("Shooting", true);
+        audio.clip = shootSFX;
+        audio.Play();
         lastFireTime = Time.time;
         Rigidbody2D rb = Instantiate(arrow, arrowStart.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y < 90 ? 270 : 90)).GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(transform.rotation.eulerAngles.y < 90 ? arrowSpeed : -arrowSpeed, 0);
@@ -48,6 +61,8 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
     public void TakeDamage(int damage)
     {
         health -= damage;
+        audio.clip = hitSFX;
+        audio.Play();
 
         if (health < 1)
         {
@@ -59,5 +74,10 @@ public class ShootingEnemy : MonoBehaviour, IDamageable, IStunnable
     public void Stun(float duration)
     {
         lastFireTime = Time.time + duration;
+    }
+
+    public void StopShooting()
+    {
+        anim.SetBool("Shooting", false);
     }
 }

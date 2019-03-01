@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 {
-    [SerializeField] private LayerMask exorcistLayer;
+    [SerializeField] private LayerMask sightLayers;
 
     [SerializeField] private float sightRange, movementSpeed;
 
@@ -16,35 +16,76 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private Rigidbody2D rb;
 
+    [SerializeField] private Animator anim;
+
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip footstepSFX, hitSFX;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         exorcistTransform = GameObject.FindWithTag("Exorcist").transform;
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         if (stunned)
         {
             return;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, sightRange, sightLayers);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, sightRange, sightLayers);
 
-            rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
-        }
-        else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
+        if (hitRight.transform && hitRight.transform.tag == "Exorcist")
         {
+            audio.clip = footstepSFX;
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
         }
+        else if (hitLeft.transform && hitLeft.transform.tag == "Exorcist")
+        {
+            audio.clip = footstepSFX;
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        //if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
+        //{
+        //    transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        //    rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
+        //}
+        //else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
+        //{
+        //    transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        //    rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
+        //}
     }
 
     public void TakeDamage(int damage)
     {
+        audio.clip = hitSFX;
+        audio.Play();
+        anim.SetBool("Damage", true);
         health -= damage;
 
         if (health < 1)
@@ -72,5 +113,10 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
     {
         yield return new WaitForSeconds(duration);
         stunned = false;
+    }
+
+    public void StopTakingDamage()
+    {
+        anim.SetBool("Damage", false);
     }
 }
