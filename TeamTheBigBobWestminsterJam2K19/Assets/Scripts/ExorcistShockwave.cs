@@ -12,8 +12,13 @@ public class ExorcistShockwave : MonoBehaviour
 
     [SerializeField] private Animator abilityAnim;
 
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip shockwaveSFX;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         stamina = GetComponent<ExorcistStamina>();
     }
 
@@ -21,6 +26,8 @@ public class ExorcistShockwave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H) && stamina.Stamina >= staminaCost)
         {
+            audio.clip = shockwaveSFX;
+            audio.Play();
             abilityAnim.SetTrigger("Shockwave");
             stamina.Stamina -= staminaCost;
             Vector2 lowerCorner = new Vector2(transform.position.x + (transform.rotation.eulerAngles.y < 90 ? transform.localScale.x: -transform.localScale.x), transform.position.y - transform.localScale.y / 2);

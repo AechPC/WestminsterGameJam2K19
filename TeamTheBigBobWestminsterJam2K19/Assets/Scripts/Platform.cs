@@ -21,13 +21,21 @@ public class Platform : MonoBehaviour
 
     [SerializeField] private float exorcistMovementMultiplier;
 
+    private AudioSource audio;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         coll = GetComponent<Collider2D>();
     }
 
     public void Move(Vector2 movement)
     {
+        if (!audio.isPlaying && movement.sqrMagnitude != 0)
+        {
+            audio.Play();
+        }
+
         Vector2 translation = axis == Axis.Horizontal ? new Vector2(movement.x, 0) : new Vector2(0, movement.y);
 
         hasClamped = (axis == Axis.Horizontal && (clamp1.position.x > (transform.position.x + translation.x) ||

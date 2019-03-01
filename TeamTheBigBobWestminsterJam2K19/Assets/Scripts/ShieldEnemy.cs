@@ -18,8 +18,13 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip footstepSFX, hitSFX;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         exorcistTransform = GameObject.FindWithTag("Exorcist").transform;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -37,12 +42,22 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
         if (hitRight.transform && hitRight.transform.tag == "Exorcist")
         {
+            audio.clip = footstepSFX;
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
         }
         else if (hitLeft.transform && hitLeft.transform.tag == "Exorcist")
         {
+            audio.clip = footstepSFX;
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
             transform.rotation = Quaternion.Euler(0, 180, 0);
 
             rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
@@ -68,6 +83,8 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     public void TakeDamage(int damage)
     {
+        audio.clip = hitSFX;
+        audio.Play();
         anim.SetBool("Damage", true);
         health -= damage;
 

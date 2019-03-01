@@ -19,8 +19,11 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         listenRangeSqr = Mathf.Pow(listenRange, 2);
         playerTransform = GameObject.FindWithTag("Exorcist").transform;
@@ -69,6 +72,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
     {
         anim.SetBool("Damage", true);
         health -= damage;
+        audio.Play();
 
         if (health < 1)
         {

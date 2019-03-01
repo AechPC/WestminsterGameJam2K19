@@ -14,10 +14,17 @@ public class HolyHandGrenade : MonoBehaviour
 
     private ParticleSystem particle;
 
+    private AudioSource audio;
+
+    private void Awake()
+    {
+        audio = GetComponent<AudioSource>();
+        particle = GetComponent<ParticleSystem>();
+    }
+
     private void Start()
     {
         startTime = Time.time;
-        particle = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -25,6 +32,7 @@ public class HolyHandGrenade : MonoBehaviour
         if (Time.time > startTime + fuseTime && !hasExploded)
         {
             particle.Play(true);
+            audio.Play();
             hasExploded = true;
             IDamageable[] hit = Physics2D.OverlapCircleAll(transform.position, range).Select(c => c.transform.GetComponent<IDamageable>()).ToArray();
 

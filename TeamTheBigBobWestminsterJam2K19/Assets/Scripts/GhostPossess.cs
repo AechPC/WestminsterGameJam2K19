@@ -23,8 +23,13 @@ public class GhostPossess : MonoBehaviour {
 
     [SerializeField] private Animator anim;
 
+    private AudioSource audio;
+
+    [SerializeField] private AudioClip shockwaveSFX;
+
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         rend = GetComponent<Renderer>();
         coll = GetComponent<Collider2D>();
         movement = GetComponent<GhostMovement>();
@@ -50,7 +55,9 @@ public class GhostPossess : MonoBehaviour {
 	            hasResetAButton = false;
 	            toPossess = possessablePlatform;
 	            anim.SetBool("Possess", true);
-            }
+	            audio.clip = shockwaveSFX;
+                audio.Play();
+	        }
         }
 	    else
 	    {
