@@ -397,11 +397,6 @@ Prefab:
       propertyPath: patrolPointRight
       value: 
       objectReference: {fileID: 848972461}
-    - target: {fileID: 114333758594351440, guid: 3b0d1f2a056d7a1439b63a9790f8c40d,
-        type: 2}
-      propertyPath: damageDealt
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b0d1f2a056d7a1439b63a9790f8c40d, type: 2}
   m_IsPrefabAsset: 0

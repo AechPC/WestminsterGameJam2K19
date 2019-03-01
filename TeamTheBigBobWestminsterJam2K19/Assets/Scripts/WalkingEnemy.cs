@@ -18,6 +18,8 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private Rigidbody2D rb;
 
+    [SerializeField] private Animator anim;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private void Update()
     {
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         if (stunned)
         {
             return;
@@ -51,12 +54,13 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     public void TakeDamage(int damage)
     {
+        anim.SetBool("Damage", true);
         health -= damage;
 
         if (health < 1)
         {
             Debug.Log("Walking enemy was killedead");
-            Destroy(gameObject);
+            anim.SetTrigger("Dead");
         }
     }
 
@@ -80,5 +84,15 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
     {
         yield return new WaitForSeconds(duration);
         stunned = false;
+    }
+
+    public void StopTakingDamage()
+    {
+        anim.SetBool("Damage", false);
+    }
+
+    public void Dead()
+    {
+        Destroy(gameObject);
     }
 }

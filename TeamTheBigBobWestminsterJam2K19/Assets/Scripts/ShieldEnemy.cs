@@ -16,6 +16,8 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private Rigidbody2D rb;
 
+    [SerializeField] private Animator anim;
+
     private void Awake()
     {
         exorcistTransform = GameObject.FindWithTag("Exorcist").transform;
@@ -24,6 +26,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private void Update()
     {
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         if (stunned)
         {
             return;
@@ -45,6 +48,7 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 
     public void TakeDamage(int damage)
     {
+        anim.SetBool("Damage", true);
         health -= damage;
 
         if (health < 1)
@@ -72,5 +76,10 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
     {
         yield return new WaitForSeconds(duration);
         stunned = false;
+    }
+
+    public void StopTakingDamage()
+    {
+        anim.SetBool("Damage", false);
     }
 }
