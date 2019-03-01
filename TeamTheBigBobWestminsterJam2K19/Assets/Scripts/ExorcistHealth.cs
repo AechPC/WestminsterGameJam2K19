@@ -9,7 +9,7 @@ public class ExorcistHealth : MonoBehaviour, IDamageable
     [SerializeField] private int maxHealth;
     private int health;
 
-    [SerializeField] private float invulnerabilityTime, damageTakenDuration;
+    [SerializeField] private float invulnerabilityTime;
     private float lastDamageTime;
 
     [SerializeField] private Image healthBar;

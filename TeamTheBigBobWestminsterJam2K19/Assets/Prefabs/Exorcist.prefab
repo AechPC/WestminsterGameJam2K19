@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.31, y: 2.05, z: -0.085610375}
+  m_LocalPosition: {x: 0.65, y: -2.19, z: -0.085610375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4053409625027340}
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 2.3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -463,7 +463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   invulnerabilityTime: 0.7
-  damageTakenDuration: 0
   healthBar: {fileID: 0}
   immune: 0
   anim: {fileID: 95606005409365380}
@@ -474,7 +473,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dac120c7a825b2419c18e438af43abd, type: 3}
   m_Name: 
@@ -512,7 +511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 240
   raycastDis: 0.62
-  jumpForce: 800
+  jumpForce: 600
+  velocityLimit: 10
   groundLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af8ec3b9b8882d4c9f824ed9317c10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 1
+  shootCooldown: 0.5
   range: 7
   reloadTime: 3
   canShoot: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
   gunPos: {fileID: 4053409625027340}
   canHit:
     serializedVersion: 2
-    m_Bits: 5137
+    m_Bits: 5393
 --- !u!114 &114714970128716652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4973181317c62fc49bb71a02f49b7a7f, type: 3}
   m_Name: 
@@ -575,14 +575,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89b90527168803f4a80082d38c518a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
   staminaCost: 60
-  dimensions: {x: 4, y: 3}
+  dimensions: {x: 2, y: 2}
   abilityAnim: {fileID: 95582525602314310}
   shockwaveSFX: {fileID: 8300000, guid: c450a0d4464ff16469a05b8b0c845b4b, type: 3}
 --- !u!212 &212592479579491282

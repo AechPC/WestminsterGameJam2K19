@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExorcistMovement : MonoBehaviour
 {
     public float movementSpeed;
-    [SerializeField] private float raycastDis, jumpForce;
+    [SerializeField] private float raycastDis, jumpForce, velocityLimit;
 
     [SerializeField] private LayerMask groundLayers;
 
@@ -59,6 +59,11 @@ public class ExorcistMovement : MonoBehaviour
         if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
             rb.AddForce(new Vector2(0, jumpForce));
+        }
+
+        if (rb.velocity.magnitude > velocityLimit)
+        {
+            rb.velocity = rb.velocity.normalized * velocityLimit;
         }
     }
 }
