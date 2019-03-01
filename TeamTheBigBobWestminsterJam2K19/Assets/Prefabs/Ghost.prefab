@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlatformPossessDis: 4
-  platformMovementSpeed: 0.2
+  platformMovementSpeed: 0.1
   possessIndicator: {fileID: 114973559558948100}
   anim: {fileID: 95864336198808328}
   shockwaveSFX: {fileID: 8300000, guid: 5f15460ea2a6c7b41afeea38b75b4109, type: 3}
