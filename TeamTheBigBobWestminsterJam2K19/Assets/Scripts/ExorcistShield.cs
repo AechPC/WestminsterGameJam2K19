@@ -11,6 +11,8 @@ public class ExorcistShield : MonoBehaviour
     private ExorcistGun gun;
     private ExorcistGrenade grenade;
 
+    [SerializeField] private Animator abilityAnim;
+
     private void Awake()
     {
         health = GetComponent<ExorcistHealth>();
@@ -32,6 +34,7 @@ public class ExorcistShield : MonoBehaviour
     private void EnableShield()
     {
         Debug.Log("Enabling shield");
+        abilityAnim.SetTrigger("Shield");
         health.immune = true;
         gun.canShoot = false;
         grenade.canThrow = false;
