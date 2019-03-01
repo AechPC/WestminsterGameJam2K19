@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4645054365204052}
   - component: {fileID: 212592479579491282}
-  - component: {fileID: 61670965668886134}
   - component: {fileID: 50309336348402872}
   - component: {fileID: 114633800326211072}
   - component: {fileID: 114351298705238306}
@@ -48,6 +47,7 @@ GameObject:
   - component: {fileID: 114355218985393980}
   - component: {fileID: 114714970128716652}
   - component: {fileID: 95606005409365380}
+  - component: {fileID: 60463876638016008}
   m_Layer: 9
   m_Name: Exorcist
   m_TagString: Exorcist
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.0699472, y: -2.48, z: -0.085610375}
+  m_LocalPosition: {x: 0.64, y: -2.32, z: -0.085610375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4053409625027340}
@@ -131,15 +131,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61670965668886134
-BoxCollider2D:
+--- !u!60 &60463876638016008
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199491822619366}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3935cea73f968c24db0073fb8b19412b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -153,9 +153,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.1875, y: 0.375}
+      - {x: 0.17, y: -0.4375}
+      - {x: 0.12, y: -0.5}
+      - {x: -0.17, y: -0.5}
+      - {x: -0.21875, y: -0.4375}
+      - {x: -0.234375, y: 0.375}
 --- !u!95 &95582525602314310
 Animator:
   serializedVersion: 3

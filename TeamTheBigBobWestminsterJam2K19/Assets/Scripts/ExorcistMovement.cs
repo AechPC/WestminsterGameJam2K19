@@ -35,11 +35,16 @@ public class ExorcistMovement : MonoBehaviour
 
             rb.velocity = movement;
         }
+        else
+        {
+
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
         //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers); // For testing distance to ground for Raycast
         //Debug.Log(hit.distance);
 
-        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && Input.GetKeyDown(KeyCode.W))
+        if (Physics2D.Raycast(transform.position, Vector2.down, raycastDis, groundLayers) && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
             rb.AddForce(new Vector2(0, jumpForce));
         }

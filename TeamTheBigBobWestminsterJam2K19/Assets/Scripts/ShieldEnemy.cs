@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
 {
-    [SerializeField] private LayerMask exorcistLayer;
+    [SerializeField] private LayerMask sightLayers;
 
     [SerializeField] private float sightRange, movementSpeed;
 
@@ -32,18 +32,38 @@ public class ShieldEnemy : MonoBehaviour, IDamageable, IStunnable
             return;
         }
 
-        if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, sightRange, sightLayers);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, sightRange, sightLayers);
 
-            rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
-        }
-        else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
+        if (hitRight.transform && hitRight.transform.tag == "Exorcist")
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
         }
+        else if (hitLeft.transform && hitLeft.transform.tag == "Exorcist")
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        //if (Physics2D.Raycast(transform.position, Vector2.left, sightRange, exorcistLayer)) // Look left
+        //{
+        //    transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        //    rb.velocity = new Vector2(-movementSpeed * Time.deltaTime, rb.velocity.y);
+        //}
+        //else if (Physics2D.Raycast(transform.position, Vector2.right, sightRange, exorcistLayer)) // Look right
+        //{
+        //    transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        //    rb.velocity = new Vector2(movementSpeed * Time.deltaTime, rb.velocity.y);
+        //}
     }
 
     public void TakeDamage(int damage)

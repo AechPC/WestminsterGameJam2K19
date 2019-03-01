@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        collisionBox = GetComponent<BoxCollider2D>();
+        collisionBox = GetComponent<Collider2D>();
     }
 
     public void OpenDoor()

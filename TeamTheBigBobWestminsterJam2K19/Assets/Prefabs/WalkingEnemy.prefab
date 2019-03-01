@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212825870590141678}
   - component: {fileID: 114333758594351440}
   - component: {fileID: 50870645622620510}
-  - component: {fileID: 61654636088366954}
   - component: {fileID: 95248085598717030}
-  m_Layer: 0
+  - component: {fileID: 60015738647726674}
+  m_Layer: 12
   m_Name: WalkingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575085073866932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: -0.69, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3434963, y: 0.07479954, z: 0.546875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61654636088366954
-BoxCollider2D:
+--- !u!60 &60015738647726674
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -86,9 +86,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.73}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4, y: -0.4}
+      - {x: 0.3, y: -0.5}
+      - {x: -0.35, y: -0.5}
+      - {x: -0.45, y: -0.4}
+      - {x: -0.3, y: 0.25}
+      - {x: 0.3, y: 0.25}
 --- !u!95 &95248085598717030
 Animator:
   serializedVersion: 3
@@ -118,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a05b13ee2c039e4297bbd2cb4b8fed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exorcistLayer:
+  sightLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 769
   health: 40
   damageDealt: 10
   sightRange: 7
