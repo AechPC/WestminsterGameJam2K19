@@ -12,6 +12,7 @@ TagManager:
   - GhostUpgrade
   - UnholyWater
   - ProgressManager
+  - HealthPickup
   layers:
   - Default
   - TransparentFX

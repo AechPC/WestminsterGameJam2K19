@@ -21,6 +21,8 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
     private AudioSource audio;
 
+    private bool dead;
+
     private void Awake()
     {
         audio = GetComponent<AudioSource>();
@@ -76,6 +78,10 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
 
         if (health < 1)
         {
+            rb.isKinematic = true;
+            movementSpeed = 0;
+            GetComponent<Collider2D>().enabled = false;
+            dead = true;
             Debug.Log("Walking enemy was killedead");
             anim.SetTrigger("Dead");
         }
@@ -85,8 +91,11 @@ public class WalkingEnemy : MonoBehaviour, IDamageable, IStunnable
     {
         if (other.gameObject.tag == "Exorcist" && !stunned)
         {
-            other.gameObject.GetComponent<IDamageable>().TakeDamage(damageDealt);
-            Debug.Log("Damaged player");
+            if (!dead)
+            {
+                other.gameObject.GetComponent<IDamageable>().TakeDamage(damageDealt);
+                Debug.Log("Damaged player");  
+            }
         }
     }
 
